@@ -167,21 +167,18 @@ def most_frequent_element(arr, k):
         lists.append(dict[i])
     heap_sort(lists)
     print(lists)
-    i = 0
 # Gets the key corresponding with the occurrence and alphabetizing those with same occurrences
-    for j in dict:
-        if lists[0] == dict[j]:
-            mosts.append(j)
-            i += 1
+    i = 0
     while i < len(lists):
+        l = i
+        for j in dict:
+            if lists[l] == dict[j]:
+                mosts.append(j)
+                i += 1
         mosts.sort()
         for m in range(len(mosts)):
             most.append(mosts[m])
         mosts.clear()
-        for j in dict:
-            if lists[i] == dict[j]:
-                mosts.append(j)
-                i += 1
 
     if len(mosts) != 0:
         mosts.sort()
